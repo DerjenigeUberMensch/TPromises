@@ -1,5 +1,5 @@
 # TPromises
-
+Is a single header single src file base at "promises/futures" it is not meant to be a extensive source of promises, but rather a single nice looking (in my opinion) source file.
 ## Functions
 ```C
 /* Allocates and intializes a promise for use.
