@@ -49,10 +49,23 @@ DestroyTPromise(
     {   return;
     }
 
-    pthread_mutex_destroy(&promise->mutex);
-    pthread_cond_destroy(&promise->cond);
+    DestroyTPromiseFilled(promise);
+
 
     free(promise);
+}
+
+void
+DestroyTPromiseFilled(
+        TPromise *promise
+        )
+{
+    if(!promise)
+    {   return;
+    }
+
+    pthread_mutex_destroy(&promise->mutex);
+    pthread_cond_destroy(&promise->cond);
 }
 
 int

@@ -49,5 +49,12 @@ int IsTPromiseDone(TPromise *promise);
  *
  */
 void DestroyTPromise(TPromise *promise);
+/* Destroys the given promise, usage of promise after being destroyed is undefined.
+ * 
+ * NOTE: if a promise is being resolved or awaited, behaviour is undefined.
+ * NOTE: Does not call 'free' on promise. 
+ *
+ */
+void DestroyTPromiseFilled(TPromise *promise);
 
 ```
